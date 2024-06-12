@@ -22,10 +22,40 @@
   .side-navbar ul li a {
     color: white;
     text-decoration: none;
+    list-style: none;
   }
   
   .side-navbar ul li a:hover {
     text-decoration: underline;
+  }
+  
+  /* Dropdown menu */
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdown-toggle:after {
+    content: " ▼";
+    font-size: 12px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+  
+  .dropdown-menu li {
+    margin-bottom: 5px;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
   }
   
   /* Main content area */
@@ -38,3 +68,20 @@
     margin-bottom: 40px;
   }
   
+  .container {
+    display: flex; /* Establishes a flex container */
+    width: 100%; /* Takes the full width of the viewport */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .side-navbar {
+    width: 10%; /* Adjust based on your preference */
+    height: 100vh;
+    overflow-y: auto; /* Adds scroll bar to the navbar if content is long */
+  }
+  
+  #content-frame {
+    width: 80%; /* Adjust to take the remaining space */
+    height: 100vh;
+    border: none; /* Removes the frame border */
+  }
