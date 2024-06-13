@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to HTML</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background: #f9f9f9;
+      justify-content: center;
+    }
+    .content-area {
+      max-width: 800px;
+      margin-left: 200px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    ul {
+      list-style: inside square;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    p, li {
+      color: #666;
+    }
+    .correct {
+      color: green;
+    }
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="content-area">
+    <h2>Databases Overview</h2>
+    <p>Databases are organized collections of data that support electronic storage and manipulation. In web development, databases are crucial for storing information that can be retrieved and manipulated dynamically by web applications.</p>
+
+    <h3>Types of Databases</h3>
+    <p>There are several types of databases used in web development, each serving different needs:</p>
+    <ul>
+        <li><strong>Relational Databases (RDBMS):</strong> Organize data into tables which are related by common fields. Popular examples include MySQL, PostgreSQL, and Oracle.</li>
+        <li><strong>NoSQL Databases:</strong> Designed for specific data models and have flexible schemas for building modern applications. Examples include MongoDB, Cassandra, and Redis.</li>
+        <li><strong>Document Stores:</strong> Store data in document-like structures (e.g., JSON, BSON). MongoDB is a popular example.</li>
+        <li><strong>Key-Value Stores:</strong> Store data as a collection of key-value pairs, making them suitable for applications that require high speed and scalability. Examples include Redis and DynamoDB.</li>
+        <li><strong>Graph Databases:</strong> Used to store information about networks of data, such as social connections. Neo4j and ArangoDB are examples of graph databases.</li>
+    </ul>
+
+    <h3>Database Operations</h3>
+    <p>Common database operations include CRUD (Create, Read, Update, Delete):</p>
+    <ul>
+        <li><strong>Create:</strong> Adding new data to the database.</li>
+        <li><strong>Read:</strong> Retrieving data from the database.</li>
+        <li><strong>Update:</strong> Modifying existing data in the database.</li>
+        <li><strong>Delete:</strong> Removing data from the database.</li>
+    </ul>
+
+    <h3>SQL vs. NoSQL</h3>
+    <p><strong>SQL</strong> (Structured Query Language) databases use structured query language for defining and manipulating data. This is powerful but can be restrictive.</p>
+    <p><strong>NoSQL</strong> databases, on the other hand, have dynamic schemas for unstructured data, and their data model can vary as they are built to handle large volumes of data spread across distributed machines.</p>
+
+    <h3>Database Management Systems (DBMS)</h3>
+    <p>A DBMS is software that interacts with the end-users, applications, and the database itself to capture and analyze data. A general-purpose DBMS is designed to allow the definition, creation, querying, update, and administration of databases.</p>
+
+    <h3>Example of SQL Query</h3>
+    <pre><code>SELECT * FROM Users WHERE Age > 18;</code></pre>
+
+    <h3>Example of a MongoDB Query</h3>
+    <pre><code>db.users.find({age: {$gt: 18}})</code></pre>
+
+    <h3>Importance in Web Development</h3>
+    <p>Databases play a critical role in web development. They store user information, preferences, and other data necessary for web applications to function interactively and efficiently.</p>
+</div>
+</div>
+  
+</body>
+</html>

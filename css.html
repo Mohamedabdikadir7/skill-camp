@@ -74,7 +74,7 @@
       <li>Internal CSS</li>
       <li>External CSS</li>
     </ul>
-
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/yfoY53QXEnI?start=3270" frameborder="0" allowfullscreen></iframe>
     <h4>Inline CSS</h4>
     <p>Inline CSS is used to apply a unique style to a single HTML element. Use the style attribute inside the HTML element.</p>
     <pre>
@@ -116,7 +116,10 @@
         }
       </code>
     </pre>
+  
 
+
+    
     <h3>Selectors</h3>
     <p>CSS selectors are used to select HTML elements to style them. Here are some common selectors:</p>
 
@@ -202,8 +205,7 @@
       </code>
     </pre>
 
-    <h4>Content</h4>
-    <p>This is where the text and images are displayed. The size of the content box can be defined using properties like <code>width</code> and <code>height</code>.</p>
+   
 
     <h4>Padding</h4>
     <p>This is the space between the content and the border. Padding can be set for each side of the box (top, right, bottom, left) using padding properties like <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, and <code>padding-left</code>.</p>
@@ -266,6 +268,7 @@
       </li>
     </ul>
 
+
     <h4>Item Properties</h4>
     <ul>
       <li><strong>order:</strong> Defines the order of the flex items. The default value is 0.
@@ -322,6 +325,94 @@
         </pre>
       </li>
     </ul>
-  </div>
+    <h4>more resources of box model</h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rIO5326FgPE" frameborder="0" allowfullscreen></iframe>
+<h2>CSS Grid Layout</h2>
+<p>CSS Grid Layout is a powerful two-dimensional layout system for the web. It allows developers to create complex responsive web design layouts more easily and consistently across browsers. It works by turning an HTML element into a grid container with rows and columns for placing child elements.</p>
+
+<h3>Basic Concepts of CSS Grid</h3>
+<ul>
+  <li><strong>Grid Container:</strong> The element on which <code>display: grid;</code> is applied. It becomes the parent element of all direct children (grid items).</li>
+  <li><strong>Grid Item:</strong> The children (direct descendants) of the grid container.</li>
+  <li><strong>Grid Line:</strong> The dividing lines that make up the structure of the grid. They can be either vertical ("column grid lines") or horizontal ("row grid lines").</li>
+  <li><strong>Grid Track:</strong> The space between two adjacent grid lines. You can think of them as the rows or columns of the grid.</li>
+  <li><strong>Grid Cell:</strong> The space between two adjacent row and two adjacent column grid lines. It's a single "unit" of the grid.</li>
+  <li><strong>Grid Area:</strong> Any area defined by four grid lines. A grid area could be comprised of any number of grid cells.</li>
+</ul>
+
+<h3>Defining a Grid</h3>
+<p>To define a grid and place elements within it, you use properties like <code>grid-template-rows</code>, <code>grid-template-columns</code>, and <code>grid-gap</code>:</p>
+<pre>
+<code>
+.container {
+  display: grid;
+  grid-template-columns: 100px 200px auto;
+  grid-template-rows: auto 100px auto;
+  grid-gap: 10px;
+}
+</code>
+</pre>
+
+<h3>Placing Grid Items</h3>
+<p>You can explicitly place items in the grid using <code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code>, and <code>grid-row-end</code>:</p>
+<pre>
+<code>
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+</code>
+</pre>
+
+<h3>Shorthand for Placing Items</h3>
+<p>The above can be simplified using shorthand notation:</p>
+<pre>
+<code>
+.item1 {
+  grid-area: 1 / 1 / 3 / 3; /* start row / start column / end row / end column */
+}
+</code>
+</pre>
+
+<h3>Using Grid Template Areas</h3>
+<p>Another powerful feature of grid layout is the ability to name areas:</p>
+<pre>
+<code>
+.container {
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "sidebar content content"
+    "footer footer footer";
+}
+
+.header { grid-area: header; }
+.content { grid-area: content; }
+.sidebar { grid-area: sidebar; }
+.footer { grid-area: footer; }
+</code>
+</pre>
+
+<h3>Responsive Grids</h3>
+<p>Grids can be made responsive using media queries and fractional units (fr):</p>
+<pre>
+<code>
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+</code>
+</pre>
+
+<p>This setup will adapt as the viewport size changes, maintaining optimal layout without the need for fixed dimensions.</p>
+<h3>more in grid</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0xMQfnTU6oo?start=891" frameborder="0" allowfullscreen></iframe>
+
+<h2>more resources</h2>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">Mozilla web docs </a>
+</div>
+  
 </body>
 </html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to JavaScript</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+    }
+    .content-area {
+      max-width: 800px;
+      margin-left: 200px;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    ul {
+      list-style: inside square;
+    }
+    p, li {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-area">
+    <h1>JavaScript Tutorial</h1>
+    <h2>Introduction to JavaScript</h2>
+    <p>JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. It is most well-known as the scripting language for Web pages, but it's also used in many non-browser environments.</p>
+    
+    <h3>Features of JavaScript</h3>
+    <ul>
+      <li>Interactivity to web pages</li>
+      <li>Supports event-driven, functional, and imperative programming styles</li>
+      <li>Rich interfaces like drag and drop and sliders</li>
+      <li>Asynchronous programming capabilities with Promises and async/await</li>
+    </ul>
+    
+    <h3>JavaScript Syntax</h3>
+    <p>A simple JavaScript statement:</p>
+    <pre>
+      <code>
+        console.log('Hello, world!');
+      </code>
+    </pre>
+    
+    <h3>Variables</h3>
+    <p>Variables can be declared using <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+    <pre>
+      <code>
+        let message = 'Hello';
+        const pi = 3.14;
+      </code>
+    </pre>
+
+    <h3>Data Types</h3>
+    <p>JavaScript supports dynamic types. Common types include:</p>
+    <ul>
+      <li>Number</li>
+      <li>String</li>
+      <li>Boolean</li>
+      <li>Array</li>
+      <li>Object</li>
+      <li>Function</li>
+      <li>Null</li>
+      <li>Undefined</li>
+    </ul>
+    <h2>JavaScript Data Types</h2>
+
+    <h3>1. Number</h3>
+    <p>Represents both integer and floating-point numbers.</p>
+    <pre><code>let integer = 100;
+  let floatingPoint = 100.5;
+  console.log(integer);  // Outputs: 100
+  console.log(floatingPoint);  // Outputs: 100.5</code></pre>
+  
+    <h3>2. String</h3>
+    <p>Textual data that can be defined using single, double quotes or backticks.</p>
+    <pre><code>let singleQuote = 'Hello';
+  let doubleQuote = "World";
+  let templateLiteral = `Hello World`;
+  console.log(singleQuote + " " + doubleQuote);  // Outputs: Hello World
+  console.log(templateLiteral);  // Outputs: Hello World</code></pre>
+  
+    <h3>3. Boolean</h3>
+    <p>Logical entity that can have two values: true and false.</p>
+    <pre><code>let isTrue = true;
+  let isFalse = false;
+  console.log(isTrue);  // Outputs: true
+  console.log(isFalse);  // Outputs: false</code></pre>
+  
+    <h3>4. Array</h3>
+    <p>Used to store multiple values in a single variable. Arrays are zero-indexed.</p>
+    <pre><code>let fruits = ['Apple', 'Banana', 'Cherry'];
+  console.log(fruits[0]);  // Outputs: Apple
+  console.log(fruits.length);  // Outputs: 3</code></pre>
+  
+    <h3>5. Object</h3>
+    <p>Represents instances of key-value pair collections.</p>
+    <pre><code>let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30
+  };
+  console.log(person.firstName);  // Outputs: John</code></pre>
+  
+    <h3>6. Function</h3>
+    <p>Defines a block of code that can be executed when "called". Functions can also be defined as expressions.</p>
+    <pre><code>function greet(name) {
+    return 'Hello ' + name + '!';
+  }
+  console.log(greet('Alice'));  // Outputs: Hello Alice!</code></pre>
+  
+    <h3>7. Null</h3>
+    <p>Represents the intentional absence of any object value.</p>
+    <pre><code>let empty = null;
+  console.log(empty);  // Outputs: null</code></pre>
+  
+    <h3>8. Undefined</h3>
+    <p>Indicates that a variable has not been assigned a value, or not declared at all.</p>
+    <pre><code>let something;
+  console.log(something);  // Outputs: undefined</code></pre>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/UmSpfdxu3ro" frameborder="0" allowfullscreen></iframe>
+
+    <h3>Functions</h3>
+    <p>Functions are defined using the <code>function</code> keyword.</p>
+    <pre>
+      <code>
+        function greet(name) {
+          return 'Hello ' + name + '!';
+        }
+      </code>
+    </pre>
+    <h2>JavaScript Functions</h2>
+    <p>Functions in JavaScript are blocks of code designed to perform a particular task. They are executed when something invokes or calls them.</p>
+  
+    <h3>Function Declaration</h3>
+    <p>To declare a function, use the <code>function</code> keyword followed by a name, followed by parentheses ().</p>
+    <pre><code>
+  function greet() {
+    console.log('Hello World!');
+  }
+    </code></pre>
+    <p>You can call the function by using its name followed by parentheses.</p>
+    <pre><code>
+  greet(); // Calls the function and logs 'Hello World!'
+    </code></pre>
+  
+    <h3>Function Parameters and Arguments</h3>
+    <p>Functions can take parameters, which are used as variables inside the function. When you call the function, you pass arguments, which are the values given to the parameters.</p>
+    <pre><code>
+  function sayHello(name) {
+    console.log('Hello ' + name);
+  }
+  sayHello('Alice'); // Logs 'Hello Alice'
+    </code></pre>
+  
+    <h3>Return Values</h3>
+    <p>Functions can return values that can be used in the program. The <code>return</code> statement determines the value the function returns.</p>
+    <pre><code>
+  function add(a, b) {
+    return a + b;
+  }
+  let sum = add(5, 3);
+  console.log(sum); // Outputs 8
+    </code></pre>
+  
+    <h3>Function Expressions</h3>
+    <p>A function can also be defined using an expression. Function expressions can be stored in a variable and are often used in situations where functions are used as values.</p>
+    <pre><code>
+  const square = function(number) {
+    return number * number;
+  };
+  console.log(square(4)); // Outputs 16
+    </code></pre>
+  
+    <h3>Arrow Functions</h3>
+    <p>ES6 introduced arrow functions, which provide a more concise syntax for writing function expressions. They use an arrow (=>) to define the function.</p>
+    <pre><code>
+  const multiply = (x, y) => x * y;
+  console.log(multiply(5, 2)); // Outputs 10
+    </code></pre>
+  
+    <h3>Immediately Invoked Function Expressions (IIFE)</h3>
+    <p>Sometimes, you might need to run a function immediately after defining it. This is done using IIFE.</p>
+    <pre><code>
+  (function() {
+    console.log('This function runs right away');
+  })();
+    </code></pre>
+  
+    <h3>Higher-Order Functions</h3>
+    <p>Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.</p>
+    <pre><code>
+  function repeat(n, action) {
+    for (let i = 0; i < n; i++) {
+      action(i);
+    }
+  }
+  repeat(3, console.log); // Outputs 0, 1, 2
+    </code></pre>
+    
+    <h3>Using Functions as Callbacks</h3>
+    <p>Functions can be passed to other functions as callbacks, which are executed at a later time or under certain conditions.</p>
+    <pre><code>
+  function greetUser(user, callback) {
+    const msg = 'Hello ' + user;
+    callback(msg);
+  }
+  greetUser('Alice', message => console.log(message)); // Outputs 'Hello Alice'
+    </code></pre>
+    <h3>more of functions</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FOD408a0EzU" frameborder="0" allowfullscreen></iframe>
+
+    <h3>Event Handling</h3>
+    <p>JavaScript can react to events like mouse clicks or key presses.</p>
+    <pre>
+      <code>
+        &lt;button onclick="alert('Button clicked!')"&gt;Click me!&lt;/button&gt;
+      </code>
+    </pre>
+    
+    <h3>Object-Oriented Programming</h3>
+    <p>JavaScript supports OOP with object constructors and the <code>class</code> keyword.</p>
+    <pre>
+      <code>
+        class Car {
+          constructor(brand) {
+            this.carname = brand;
+          }
+          present() {
+            return 'I have a ' + this.carname;
+          }
+        }
+      </code>
+    </pre>
+    
+    <h3>DOM Manipulation</h3>
+    <p>JavaScript can manipulate the HTML content and style using the Document Object Model (DOM).</p>
+    <pre>
+      <code>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+      </code>
+    </pre>
+    <h2>JavaScript DOM Manipulation</h2>
+    <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. JavaScript can manipulate the DOM to dynamically change the content and appearance of a web page.</p>
+  
+    <h3>Accessing Elements</h3>
+    <p>You can access HTML elements using various methods provided by the document object.</p>
+    <ul>
+      <li><code>document.getElementById(id)</code>: Selects an element by its ID.</li>
+      <li><code>document.getElementsByTagName(name)</code>: Selects all elements that have the specified tag name.</li>
+      <li><code>document.getElementsByClassName(name)</code>: Selects all elements that have the specified class name.</li>
+      <li><code>document.querySelector(selector)</code>: Returns the first element that matches a specified CSS selector(s).</li>
+      <li><code>document.querySelectorAll(selector)</code>: Returns all elements that match a specified CSS selector(s).</li>
+    </ul>
+  
+    <h3>Changing Content</h3>
+    <p>The <code>innerHTML</code> property can be used to get or set the HTML content of an element.</p>
+    <pre><code>
+  document.getElementById('demo').innerHTML = 'Hello, DOM!';
+    </code></pre>
+    
+    <h3>Changing Styles</h3>
+    <p>The <code>style</code> property is used to get or set the style of an element.</p>
+    <pre><code>
+  document.getElementById('demo').style.color = 'red';
+    </code></pre>
+  
+    <h3>Creating Elements</h3>
+    <p>You can create new elements with <code>document.createElement(tagName)</code>.</p>
+    <pre><code>
+  const newDiv = document.createElement('div');
+  newDiv.innerHTML = 'New Element';
+  document.body.appendChild(newDiv);
+    </code></pre>
+  
+    <h3>Removing Elements</h3>
+    <p>To remove an element, you can use <code>parentNode.removeChild(element)</code>.</p>
+    <pre><code>
+  const parent = document.getElementById('parent');
+  const child = document.getElementById('child');
+  parent.removeChild(child);
+    </code></pre>
+  
+    <h3>Event Handling</h3>
+    <p>JavaScript can capture and respond to user events like clicks, form submissions, and keyboard actions.</p>
+    <pre><code>
+  document.getElementById('myBtn').addEventListener('click', function() {
+    alert('Button clicked!');
+  });
+    </code></pre>
+  
+    <h3>Working with Classes</h3>
+    <p>Classes can be added, removed, or toggled on an element.</p>
+    <pre><code>
+  const element = document.getElementById('myElement');
+  element.classList.add('active');
+  element.classList.remove('inactive');
+  element.classList.toggle('visible');
+    </code></pre>
+  
+    <h3>Attribute Manipulation</h3>
+    <p>You can get or set attributes of elements using <code>getAttribute()</code> and <code>setAttribute()</code>.</p>
+    <pre><code>
+  const anchor = document.getElementById('myLink');
+  const hrefValue = anchor.getAttribute('href');
+  anchor.setAttribute('href', 'https://www.example.com');
+    </code></pre>
+    <h3>more of DOM Manipulation</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/WjxQRfZfZnw" frameborder="0" allowfullscreen></iframe>
+
+    <h3>Debugging</h3>
+    <p>Debugging can be done using tools like the browser's Developer Tools console.</p>
+    
+    <h3>Frameworks and Libraries</h3>
+    <p>JavaScript has many frameworks and libraries to help build complex applications, like React, Angular, and Vue.js.</p>
+    
+    <h3>Asynchronous JavaScript</h3>
+    <p>Asynchronous code can be handled using callbacks, promises, or async/await syntax.</p>
+    <pre>
+      <code>
+        async function fetchData() {
+          let response = await fetch('api/data');
+          let data = await response.json();
+          return data;
+        }
+      </code>
+    </pre>
+    <h2>More JavaScript resources</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PkZNo7MFNFg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+  
+</body>
+</html>
