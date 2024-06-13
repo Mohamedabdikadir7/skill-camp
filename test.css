@@ -75,7 +75,7 @@
   }
   
   .side-navbar {
-    width: 10%; /* Adjust based on your preference */
+    width: 8%; /* Adjust based on your preference */
     height: 100vh;
     overflow-y: auto; /* Adds scroll bar to the navbar if content is long */
   }
