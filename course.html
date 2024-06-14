@@ -4,39 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Course Page</title>
-  <link rel="stylesheet" href="test.css"> <!-- Link to your external CSS file -->
+  <link rel="stylesheet" href="test.css"> <!-- Ensure this path is correct -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementsByClassName('side-navbar')[0];
+      sidebar.style.width = sidebar.style.width === '0px' ? '200px' : '0px'; // Toggle width between 0 and 200px
+    }
+
+    function loadPage(url) {
+      const frame = document.getElementById('content-frame');
+      frame.src = url;
+      localStorage.setItem('lastVisited', url);
+    }
+
+    window.onload = function() {
+      const lastVisited = localStorage.getItem('lastVisited');
+      if (lastVisited) {
+        document.getElementById('content-frame').src = lastVisited;
+      }
+    };
+  </script>
 </head>
 <body>
   <div class="container">
     <nav class="side-navbar">
+      <button onclick="toggleSidebar()">Toggle Sidebar</button>
       <ul>
-        <li><a href="comp.html" target="content-frame">Introduction to computers</a></li>
-    
+        <li><a href="javascript:void(0);" onclick="loadPage('comp.html')">Introduction to computers</a></li>
         <li class="dropdown">
           <a href="#software-engineering" class="dropdown-toggle">Software Engineering</a>
-        
           <ul class="dropdown-menu">
-            <li><a href="intro.html" target="content-frame">Introduction to Programming</a></li>
-            <li><a href="html.html" target="content-frame"> into into HTML, </a></li>
-            <li><a href="css.html" target="content-frame"> into into CSS, </a></li>
-            <li><a href="js.html" target="content-frame"> into into JAVASCRIPT, </a></li>
-           
+            <li><a href="javascript:void(0);" onclick="loadPage('intro.html')">Introduction to Programming</a></li>
+            <li><a href="javascript:void(0);" onclick="loadPage('html.html')">Introduction to HTML</a></li>
+            <li><a href="javascript:void(0);" onclick="loadPage('css.html')">Introduction to CSS</a></li>
+            <li><a href="javascript:void(0);" onclick="loadPage('js.html')">Introduction to JavaScript</a></li>
           </ul>
         </li>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br><br>
-        <li><a href="ver.html" target="content-frame">version controls</a></li>
-        <li><a href="db.html" target="content-frame">Databases</a></li>
-        <li><a href="cyber.html" target="content-frame">Cyber Security</a></li>
-        <li><a href="bitcoin.html" target="content-frame">Bitcoin</a></li>
-        <!-- More links here -->
+        <li><a href="javascript:void(0);" onclick="loadPage('ver.html')">Version Controls</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('db.html')">Databases</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('cyber.html')">Cyber Security</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('ui.html')">UI UX</a></li>
+        <li><a style="color: white;" href="index.html">Home</a></li>
       </ul>
     </nav>
-    <iframe name="content-frame" id="content-frame" style="width: 80%; height: 600px; border: none;"></iframe>
+    <iframe id="content-frame" name="content-frame"></iframe>
   </div>
 </body>
 </html>

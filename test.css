@@ -1,87 +1,108 @@
 /* Basic styling for side navbar */
 .side-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Initial width */
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: width 0.3s ease; /* Smooth transition for sidebar */
+  overflow-y: auto; /* Enables scrolling on small devices */
+}
+
+.side-navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-navbar ul li {
+  margin-bottom: 10px;
+}
+
+.side-navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.side-navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle:after {
+  content: " ▼";
+  font-size: 12px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Main content area */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.course-section {
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+#content-frame {
+  flex-grow: 1; /* Takes up remaining space */
+  height: 100vh;
+  border: none;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .side-navbar {
+    width: 0; /* Sidebar hidden by default on small screens */
+    padding: 0;
+  }
+
+  .content {
+    margin-left: 0; /* Full width content area */
+  }
+
+  #content-frame {
+    width: 100%; /* Full width iframe on small screens */
+  }
+
+  #collapse-button {
+    display: block; /* Ensure button is always visible */
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    z-index: 1050; /* Above all other content */
   }
-  
-  .side-navbar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .side-navbar ul li {
-    margin-bottom: 10px;
-  }
-  
-  .side-navbar ul li a {
-    color: white;
-    text-decoration: none;
-    list-style: none;
-  }
-  
-  .side-navbar ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Dropdown menu */
-  .dropdown {
-    position: relative;
-  }
-  
-  .dropdown-toggle:after {
-    content: " ▼";
-    font-size: 12px;
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #444;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-  }
-  
-  .dropdown-menu li {
-    margin-bottom: 5px;
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
-  /* Main content area */
-  .content {
-    margin-left: 220px; /* Adjust this value to give space for the side navbar */
-    padding: 20px;
-  }
-  
-  .course-section {
-    margin-bottom: 40px;
-  }
-  
-  .container {
-    display: flex; /* Establishes a flex container */
-    width: 100%; /* Takes the full width of the viewport */
-    height: 100vh; /* Full viewport height */
-  }
-  
+}
+
+@media (max-width: 480px) {
   .side-navbar {
-    width: 8%; /* Adjust based on your preference */
-    height: 100vh;
-    overflow-y: auto; /* Adds scroll bar to the navbar if content is long */
+    padding: 15px; /* Slightly smaller padding on very small screens */
   }
-  
-  #content-frame {
-    width: 80%; /* Adjust to take the remaining space */
-    height: 100vh;
-    border: none; /* Removes the frame border */
-  }
+}

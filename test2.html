@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      display: flex;
+      background: #f9f9f9;
+      margin: 0;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+    }
+    .side-navbar {
+      width: 250px; /* Set the width of the sidebar */
+      transition: width 0.5s; /* Smooth transition for collapsing */
+      overflow: hidden; /* Hide overflow */
+      background: #ccc; /* Background color for visibility */
+    }
+    .content-area {
+      flex-grow: 1;
+      padding: 20px;
+    }
+    #collapse-button {
+      position: fixed; /* Positioning it fixed */
+      top: 10px; /* Near the top of the viewport */
+      left: 10px; /* Near the left edge of the viewport */
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      z-index: 1000; /* Ensures it's on top of other content */
+    }
+  </style>
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementsByClassName('side-navbar')[0];
+      sidebar.style.width = sidebar.style.width === '0px' ? '250px' : '0px';
+    }
+
+    function loadPage(url) {
+      const frame = document.getElementById('content-frame');
+      frame.src = url;
+      localStorage.setItem('lastVisited', url);
+    }
+
+    window.onload = function() {
+      // Check if a page was previously visited
+      const lastVisited = localStorage.getItem('lastVisited');
+      if (lastVisited) {
+        document.getElementById('content-frame').src = lastVisited;
+      }
+    };
+  </script>
+</head>
+<body>
+  <button id="collapse-button" onclick="toggleSidebar()">Toggle Sidebar</button>
+  <div class="container">
+    <nav class="side-navbar">
+      <ul>
+        <li><a href="javascript:void(0);" onclick="loadPage('comp.html')">Introduction to computers</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('intro.html')">Introduction to Programming</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('html.html')">Introduction to HTML</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('css.html')">Introduction to CSS</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('js.html')">Introduction to JavaScript</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('ver.html')">Version Controls</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('db.html')">Databases</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('cyber.html')">Cyber Security</a></li>
+        <li><a href="javascript:void(0);" onclick="loadPage('ui.html')">UI UX</a></li>
+      </ul>
+    </nav>
+    <div class="content-area">
+      <iframe name="content-frame" id="content-frame" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+  </div>
+</body>
+</html>
