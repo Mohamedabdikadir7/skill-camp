@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 4">
+    <title>Sidebar template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="out.css">
+</head>
+<body>
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">our courses</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic"></div>
+      </div>
+      <div class="sidebar-menu">
+
+        <ul>
+            <li class="header-menu">
+              <span>introduction course</span>
+            </li>
+<ul>
+    <li><a href="comp.html" data-page="intro.html"><i class=""></i> introduction to computers</a></li>
+</ul>
+        <ul>
+          <li class="header-menu">
+            <span>software engineering</span>
+          </li>
+         
+             
+             
+           
+            
+              <ul>
+                 
+                 <li><a href="intro.html" data-page="intro.html"><i class="fas fa-laptop-code"></i> introduction into programming</a></li>
+                 <li><a href="html.html" data-page="html.html"><i class="fab fa-html5"></i> intro into html</a></li>
+                 <li><a href="css.html" data-page="css.html"><i class="fab fa-css3-alt"></i> intro into css</a></li>
+                 <li><a href="js.html" data-page="js.html"><i class="fab fa-js-square"></i>intro into javascript</a></li>
+                 <li><a href="ver.html" data-page="ver.html"><i class="fa fa-folder"></i><span>version controls</span></a></li>
+                </ul>
+   
+    
+         
+          <li><a href="cyber.html" data-page="cyber.html"><i class="fa fa-folder"></i><span>Cyber security</span></a></li>
+          <li><a href="" data-page="data-analysis.html"><i class="fa fa-folder"></i><span>data analysis</span></a></li>
+          <li class="header-menu"><span>Short courses</span></li>
+          <li><a href="#"><i class="fa fa-graphics"></i><span>Documentation</span><span class="badge badge-pill badge-primary">Beta</span></a></li>
+          <li><a href="#"><i class="fa fa-calendar"></i><span>Calendar</span></a></li>
+          <li><a href="#"><i class="fa fa-folder"></i><span>Examples</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-footer"></div>
+  </nav>
+  <main class="page-content">
+    <div class="container-fluid" id="content">
+      <!-- Content will be loaded here -->
+      <h2>Welcome</h2>
+      <p>Select a course from the sidebar to view its content.</p>
+    </div>
+  </main>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="out.js"></script>
+<script>
+jQuery(function ($) {
+    $(".sidebar-dropdown > a").click(function() {
+        $(".sidebar-submenu").slideUp(200);
+        if ($(this).parent().hasClass("active")) {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this).parent().removeClass("active");
+        } else {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this).next(".sidebar-submenu").slideDown(200);
+            $(this).parent().addClass("active");
+        }
+    });
+
+    $("#close-sidebar").click(function() {
+        $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function() {
+        $(".page-wrapper").addClass("toggled");
+    });
+
+    // Handle link clicks to load content dynamically
+    $('.sidebar-menu a[data-page]').click(function(event) {
+        event.preventDefault();
+        var page = $(this).data('page');
+        loadPage(page);
+    });
+
+    function loadPage(page) {
+        $.ajax({
+            url: page,
+            method: 'GET',
+            success: function(data) {
+                $('#content').html(data);
+            },
+            error: function() {
+                $('#content').html('<p>Sorry, there was an error loading the content.</p>');
+            }
+        });
+    }
+});
+</script>
+</body>
+</html>
