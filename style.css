@@ -238,67 +238,96 @@ nav .navbar-nav .nav-link:hover {
 .about-us-section {
     margin: 20px;
     padding: 20px;
-   background-color: white;
+    background-color: white;
     border-radius: 10px;
-  
-  }
-  
-  .about-us {
+}
+
+.about-us {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
-  }
-  
-  .about-us img {
-    width: 500px;
-    height: 500px;
+}
+
+.about-us img {
+    width: 100%; /* Adjusted for responsiveness */
+    max-width: 500px; /* Limiting maximum width */
+    height: auto; /* Ensures image aspect ratio is maintained */
     object-fit: cover;
-    margin-right: 20px;
     border-radius: 10px;
- 
-    margin-top: 20px;
-  }
-  
-  
-  .about-us-text {
+    margin-bottom: 20px; /* Added spacing at the bottom */
+}
+
+.about-us-text {
     flex: 1;
-  }
-  
-  .about-us-text h3 {
+    margin-left: 20px; /* Adjusted margin for smaller screens */
+}
+
+.about-us-text h3 {
     color: #333;
     margin-bottom: 10px;
-    margin-left: 300px;
-    font-size: 40px;
-  }
-  
-  .about-us-text p {
+    font-size: 32px; /* Adjusted font size for smaller screens */
+}
+
+.about-us-text p {
     color: #555;
     margin-bottom: 20px;
-   line-height: 2.6;
-    font-family: Arial, sans-serif; 
-  font-size: 17px;
-    margin-bottom: 10px; 
-    margin-left: 20px;
-  }
-  
-  .about-us-text ul {
+    line-height: 1.8;
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Adjusted font size for smaller screens */
+}
+
+.about-us-text ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     padding: 0;
     margin-left: 20px;
-  }
-  
-  .about-us-text ul li {
+}
+
+.about-us-text ul li {
     width: 50%;
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 14px; /* Adjusted font size for smaller screens */
     color: #333;
-  }
-  
-  .about-us-text ul li i {
+}
+
+.about-us-text ul li i {
     color: green;
     margin-right: 10px;
-  }
+}
+
+.read-more-btn {
+    margin-top: 20px; /* Added spacing for button */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .about-us img {
+        margin-right: 0; /* Remove right margin for smaller screens */
+    }
+
+    .about-us-text h3 {
+        font-size: 28px; /* Further reduce font size for smaller screens */
+    }
+
+    .about-us-text p {
+        font-size: 14px; /* Further reduce font size for smaller screens */
+    }
+
+    .about-us-text ul li {
+        width: 100%; /* Full width for list items on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .about-us-text h3 {
+        font-size: 24px; /* Adjust font size for even smaller screens */
+    }
+
+    .about-us-text p {
+        font-size: 13px; /* Adjust font size for even smaller screens */
+    }
+}
   
   .read-more-btn {
     background-color: gray;
