@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+    body {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Limit the width for better readability on larger screens */
+}
+
+   h1,  h2 {
+        text-align: center;
+    }
+    p {
+        margin: 20px;
+        line-height: 1.5;
+    }
+    .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .col {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    flex: 1 1 300px;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .col h3 {
+    color: #343a40;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .col p {
+    color: #6c757d;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .instructor-expertise {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.instructor-expertise h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.expertise-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.expertise-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.expertise-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.expertise-card p {
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.student-success {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.student-success h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.success-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.success-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.success-card p {
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.faq {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.accordion-item {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.accordion-header {
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.accordion-button {
+  font-weight: bold;
+  color: #343a40;
+  padding: 15px 20px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.accordion-body {
+  padding: 20px;
+  color: #6c757d;
+}
+
+.highlight-word {
+  font-weight: bold;
+  color: black;
+  font-size: 24px;
+}
+</style>
+</head>
+<body>
+    <section class="navbarrrr">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <!-- Move the brand to the left -->
+               <img src="/images/DALL·E 2024-06-12 13.51.51 - Design a modern and sleek logo for a technology school called 'Skills Camp'. The logo should feature a stylized representation of a computer and a gea.webp" alt="logo" class="navbar-logo">
+                
+                <!-- Use margin-left: auto to push the nav links to the right -->
+                <div class="navbar-nav ml-auto p-2">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 pr-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="out.html">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="contact.html">Contact us</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+    </section>
+    <br>
+    <h1>About us</h1>
+   <p>skillscamp  based in northern Kenya is dedicated to empowering individuals with the skills and knowledge necessary to excel in the rapidly evolving field of technology, particularly in software development. Our mission is centered around providing accessible, high-quality education that prepares students for successful careers in tech, thereby fostering economic growth and innovation within the local community and beyond.</p>
+    <h2>Our Mission
+       </h2>
+ 
+    <p>At skillscamp, we strive to equip aspiring technologists from northern Kenya and neighboring regions with comprehensive skills in software development. Through rigorous training and mentorship, we aim to bridge the gap between theoretical knowledge and practical application, empowering our students to become proficient developers capable of contributing effectively to the tech industry.</p>
+<h2>Vision</h2>
+<p>Our vision extends beyond merely teaching technical skills; we aspire to cultivate a thriving community of tech professionals who drive innovation and positive change in their respective communities. By offering specialized training and fostering an environment of continuous learning, we aim to position northern Kenya as a hub for tech talent, attracting opportunities and investment that benefit both our graduates and the local economy.</p>
+<h2>our core values</h2>
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        
+        <p><strong style="color: black; font-size: 24px;">Excellence:</strong> <br>Striving for the highest standards in education delivery, curriculum development, and student outcomes.</p>
+      </div>
+      <div class="col order-5">
+        <p><span class="highlight-word">Innovation:</span> <br> Embracing creativity and continuous improvement in teaching methodologies and technological advancements.</p>
+      </div>
+      <div class="col order-1">
+        <p><span class="highlight-word">Pioneering:</span> <br>Fostering a culture of innovation and exploring cutting-edge technologies.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <p><span class="highlight-word">Empowerment:</span> Empowering individuals through education and skills development to realize their full potential and contribute positively to society.</p>
+      </div>
+      <div class="col order-5">
+        <p><span class="highlight-word">Collaboration:</span> Fostering a supportive and inclusive environment that promotes teamwork, knowledge sharing, and mutual respect.</p>
+      </div>
+      <div class="col order-1">
+        <p><span class="highlight-word">Lifelong Learning:</span> Cultivating a culture of curiosity, continuous learning, and professional development among students, faculty, and alumni.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+ 
+  <section class="instructor-expertise">
+    <div class="container">
+      <h2>Instructor Expertise</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="expertise-card">
+            <img src="https://themewagon.github.io/elearning/img/team-1.jpg" alt="Instructor 1">
+            <h3>GEDI </h3>
+            <p>Full Stack Developer</p>
+            <p>GEDI is an experienced full stack developer with over 20 years of experience in building robust web applications using modern technologies like React, Node.js, python, C  and MongoDB.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="expertise-card">
+            <img src="https://themewagon.github.io/elearning/img/team-3.jpg" alt="Instructor 2">
+            <h3>Abdi aden</h3>
+            <p>Data Scientist</p>
+            <p>Abdi is a highly skilled data scientist with expertise in machine learning, data mining, and predictive analytics. he has a strong background in Python and various data science libraries.Expert in his field</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="expertise-card">
+            <img src="https://themewagon.github.io/elearning/img/team-3.jpg" alt="Instructor 3">
+            <h3>Farhan </h3>
+            <p>Cybersecurity Expert</p>
+            <p>Michael has extensive knowledge in cybersecurity, including network security, ethical hacking, and security protocols.SNR Eng at Microsoft </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <section class="student-success">
+    <div class="container">
+      <h2>Student Success Stories</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="success-card">
+            <img src="student1.jpg" alt="Student 1">
+            <h3>Noor hafow</h3>
+          
+            <p>"SkillCamp provided me with the skills and confidence I needed to land my dream job as a software engineer. The instructors were knowledgeable and supportive, and the hands-on projects really solidified my learning."</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="success-card">
+            <img src="student2.jpg" alt="Student 2">
+            <h3>Ibrahim Abdi</h3>
+            <p>"SkillCamp a game-changer for my career. Not only did I gain valuable technical skills, but I also learned how to collaborate effectively in a team environment, which has been invaluable in my current role."</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="success-card">
+            <img src="student3.jpg" alt="Student 3">
+            <h3>Zeytun</h3>
+            <p>"SkillCamp exceeded my expectations. The instructors were highly knowledgeable and passionate about teaching, and the curriculum was challenging but well-structured. I'm now working as a data analyst, and I owe it all to the skills I acquired during that time."</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="success-card">
+            <img src="https://empowerwithit.org/wp-content/uploads/2024/04/WhatsApp-Image-2024-04-14-at-5.53.31-PM-e1713106810240.jpeg" alt="Student 4">
+            <h3>Yussuf </h3>
+            <p>"SkillCamp not only taught me the technical skills I needed, but it also helped me develop a growth mindset and resilience. The projects and challenges pushed me to keep learning and improving, which has been invaluable in my career."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+  <br>
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Do I need a laptop ?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              YES , A laptop of 8GB RAM and 256Gb SSD storage is needed for smooth learning.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              What is the typical class size?
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+            Our courses are taken online 
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              What is the coding experience required for admission?
+            </button>
+          </h3>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No prior coding experience is required. Our sytem is designed for beginners as well as those with some coding knowledge.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Do you offer career support and job placement assistance?
+            </button>
+          </h3>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Yes, we provide comprehensive career support, including resume building, interview preparation, and job placement assistance through our network of industry partners.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header" id="headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              What is the cost ?
+            </button>
+          </h3>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              100% FREE OF CHARGE.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
