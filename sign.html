@@ -3,182 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Sign Up and Login</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #f0f0f0;
-        }
-
-        .signup-container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
+        form {
             margin-bottom: 20px;
         }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
+        label, input {
             display: block;
-            color: #666;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .signup-btn {
-            width: 100%;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .signup-btn:hover {
-            background: #4CAF50;
-        }
-
-        .login-link {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .login-link:hover {
-            color: #4CAF50;
-        }
-
-        @media (max-width: 768px) {
-            .signup-container {
-                padding: 15px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .form-group input {
-                padding: 8px;
-                font-size: 14px;
-            }
-
-            .signup-btn {
-                padding: 8px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .signup-container {
-                padding: 10px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-
-            .form-group input {
-                padding: 6px;
-                font-size: 12px;
-            }
-
-            .signup-btn {
-                padding: 6px;
-                font-size: 12px;
-            }
-
-            .login-link {
-                font-size: 12px;
-            }
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="signup-container">
-        <h2>Sign Up</h2>
-        <form id="signup-form">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="signup-btn">Sign Up</button>
-        </form>
-        <a href="login.html" class="login-link">Already have an account? Login</a>
-    </div>
+    <h1>Sign Up</h1>
+    <form id="register">
+        <label for="fullName">Full Name:</label>
+        <input type="text" placeholder="Full Name" id="fullName" required>
+        <label for="email">Email Address:</label>
+        <input type="email" placeholder="Email Address" id="email" required>
+        <label for="createPassword">Create Password:</label>
+        <input type="password" placeholder="Create Password" id="createPassword" required>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+        <button type="submit">Sign Up</button>
+    </form>
+
+   <button><a href="login.html">login</a></button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const signupForm = document.getElementById('signup-form');
+            const registerForm = document.getElementById('register');
+            const loginForm = document.getElementById('login');
 
-            signupForm.addEventListener('submit', function(event) {
+            registerForm.addEventListener('submit', registerUser);
+            loginForm.addEventListener('submit', loginUser);
+
+            function registerUser(event) {
                 event.preventDefault();
 
-                // Get form values
-                const username = document.getElementById('username').value;
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
+                let fullName = document.getElementById('fullName').value;
+                let email = document.getElementById('email').value;
+                let password = document.getElementById('createPassword').value;
+                let confirmPassword = document.getElementById('confirmPassword').value;
 
-                // Store user data in localStorage (for demonstration purposes)
-                const userData = {
-                    username: username,
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+
+                const userObject = {
+                    fullName: fullName,
                     email: email,
                     password: password
                 };
 
-                // Check if localStorage is supported
-                if (typeof(Storage) !== "undefined") {
-                    // Retrieve existing users data or initialize empty array
-                    let users = JSON.parse(localStorage.getItem('users')) || [];
+                fetch("http://localhost:3000/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(userObject)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Registration failed. Please try again.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert('Registration successful!');
+                    registerForm.reset();
+                })
+                .catch(error => {
+                    alert(error.message);
+                    console.error('Error:', error);
+                });
+            }
 
-                    // Add new user data
-                    users.push(userData);
+            function loginUser(event) {
+                event.preventDefault();
 
-                    // Save updated users data back to localStorage
-                    localStorage.setItem('users', JSON.stringify(users));
+                let email = document.getElementById('loginEmail').value;
+                let password = document.getElementById('loginPassword').value;
 
-                    // Redirect to login page (for demonstration purposes)
-                    window.location.href = 'login.html';
-                } else {
-                    alert('LocalStorage is not supported. Please use a different browser.');
-                }
-            });
+                const loginCredentials = {
+                    email: email,
+                    password: password
+                };
+
+                fetch("http://localhost:3000/users", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(loginCredentials)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Login failed. Please check your credentials.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    alert('Login successful!');
+                    document.getElementById('login').reset(); // Reset the form fields
+                    // Redirect to out.html after successful login
+                    window.location.href = 'out.html';
+                })
+                .catch(error => {
+                    alert(error.message);
+                    console.error('Error:', error);
+                });
+            }
         });
     </script>
 </body>
