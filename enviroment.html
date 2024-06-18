@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting Up Development Environment</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    /* Content area styles */
+    .content-area {
+      max-width: 800px;
+      margin: 0 auto; /* Centers the content and removes left margin */
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Heading styles */
+    h1, h2, h3 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    /* List styles */
+    ul {
+      list-style: inside square;
+      padding-left: 20px;
+    }
+
+    /* Paragraph and list item styles */
+    p, li {
+      color: #666;
+    }
+
+    /* Code block styles */
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      overflow-x: auto; /* Ensures code blocks are scrollable horizontally on smaller screens */
+    }
+
+    /* Responsive iframe */
+    iframe {
+      width: 100%;
+      height: 315px; /* Adjust height as needed */
+      margin-bottom: 20px;
+    }
+
+    /* Responsive images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 992px) {
+      /* Adjust content area padding and margin for tablets and smaller laptops */
+      .content-area {
+        padding: 15px;
+        margin: 0 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Additional adjustments for smaller tablets */
+      .content-area {
+        padding: 10px;
+      }
+      iframe {
+        height: 200px; /* Smaller iframe on smaller devices */
+      }
+    }
+
+    @media (max-width: 600px) {
+      /* Adjustments for mobile phones */
+      .content-area {
+        margin: 0 5px;
+        padding: 10px;
+      }
+      iframe {
+        height: 180px;
+      }
+      pre {
+        padding: 5px; /* Smaller padding for code blocks */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-area">
+    <h1>Setting Up Development Environment</h1>
+    
+    <h2>Why Choose Ubuntu Over Windows?</h2>
+    <p>Choosing the right operating system is crucial for software engineers to ensure a smooth and efficient workflow. Ubuntu, a popular Linux distribution, is often preferred over Windows for several reasons:</p>
+    <ul>
+      <li><strong>Stability and Security:</strong> Ubuntu offers robust stability and security features, making it a reliable choice for development.</li>
+      <li><strong>Open-Source Nature:</strong> Being open-source, Ubuntu allows developers to modify and customize the OS according to their needs.</li>
+      <li><strong>Extensive Community Support:</strong> A large community of developers continuously contributes to Ubuntu, providing extensive support and resources.</li>
+      <li><strong>Compatibility with Development Tools:</strong> Many development tools and environments are optimized for Linux, providing better performance and compatibility on Ubuntu.</li>
+    </ul>
+
+    <h2>Setting Up Ubuntu</h2>
+    <p>Here's a guide to getting started with Ubuntu:</p>
+    <ul>
+      <li><strong>Installation:</strong>
+        <ul>
+          <li>Download the latest Ubuntu ISO from the official website.</li>
+          <li>Create a bootable USB drive using tools like Rufus (for Windows) or Etcher (cross-platform).</li>
+          <li>Boot from the USB drive and follow the on-screen instructions to install Ubuntu on your machine.</li>
+        </ul>
+      </li>
+      <li><strong>Basic Configuration:</strong>
+        <ul>
+          <li>Update and upgrade your system using the terminal:
+            <pre><code>sudo apt update && sudo apt upgrade</code></pre>
+          </li>
+          <li>Install essential tools:
+            <pre><code>sudo apt install build-essential curl git</code></pre>
+          </li>
+        </ul>
+      </li>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/sWbUDq4S6Y8?start=13019" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <li><strong>Setting Up Development Tools:</strong>
+        <ul>
+          <li>Install Git for version control:
+            <pre><code>sudo apt install git</code></pre>
+          </li>
+          <li>Configure Git:
+            <pre><code>
+git config --global user.name "Your Name"
+git config --global user.email "youremail@example.com"
+            </code></pre>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>Why VS Code is Preferred</h2>
+    <p>Visual Studio Code (VS Code) is a powerful, open-source code editor that is highly customizable and feature-rich. It is preferred by many software engineers due to the following reasons:</p>
+    <ul>
+      <li><strong>IntelliSense:</strong> Provides smart completions based on variable types, function definitions, and imported modules.</li>
+      <li><strong>Debugging:</strong> Built-in debugging support helps diagnose and fix issues directly from the editor.</li>
+      <li><strong>Extensions:</strong> A vast library of extensions enhances productivity and adds support for various programming languages and tools.</li>
+      <li><strong>Customization:</strong> Highly customizable to fit individual workflows, including themes, keybindings, and settings.</li>
+      <li><strong>Integrated Git:</strong> Seamless Git integration allows version control operations directly within the editor.</li>
+    </ul>
+
+    <h2>Installing and Setting Up Visual Studio Code (VS Code)</h2>
+    <p>Follow these steps to install and configure VS Code on Ubuntu:</p>
+    <ul>
+      <li><strong>Installation:</strong>
+        <ul>
+          <li>Download the .deb package from the <a href="https://code.visualstudio.com/download">VS Code website</a>.</li>
+          <li>Install the package using the terminal:
+            <pre><code>sudo dpkg -i code_*.deb</code></pre>
+          </li>
+          <li>If there are dependency issues, fix them with:
+            <pre><code>sudo apt --fix-broken install</code></pre>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Basic Configuration:</strong>
+        <ul>
+          <li>Open VS Code and install recommended extensions for your programming languages and tools.</li>
+          <li>Customize settings to suit your development workflow, such as enabling auto-save, configuring the integrated terminal, and setting up code snippets.</li>
+        </ul>
+      </li>
+    </ul>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/B-s71n0dHUk?start=57" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <p>Setting up Ubuntu and VS Code provides a robust and efficient development environment, enhancing productivity and enabling smooth workflows for software engineering projects.</p>
+  
+    <script src="index.js"></script>
+  </div>
+</body>
+</html>
