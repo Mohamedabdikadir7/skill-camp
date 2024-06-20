@@ -5,12 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up and Login</title>
     <style>
-        form {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
             margin-bottom: 20px;
         }
-        label, input {
-            display: block;
-            margin-bottom: 10px;
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+
+        .login-link {
+            background-color: #6c757d;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .login-link:hover {
+            background-color: #5a6268;
         }
     </style>
 </head>
@@ -28,15 +91,13 @@
         <button type="submit">Sign Up</button>
     </form>
 
-   <button><a href="login.html">login</a></button>
+    <a class="login-link" href="login.html">Login</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const registerForm = document.getElementById('register');
-            const loginForm = document.getElementById('login');
 
             registerForm.addEventListener('submit', registerUser);
-            loginForm.addEventListener('submit', loginUser);
 
             function registerUser(event) {
                 event.preventDefault();
@@ -73,42 +134,6 @@
                 .then(data => {
                     alert('Registration successful!');
                     registerForm.reset();
-                })
-                .catch(error => {
-                    alert(error.message);
-                    console.error('Error:', error);
-                });
-            }
-
-            function loginUser(event) {
-                event.preventDefault();
-
-                let email = document.getElementById('loginEmail').value;
-                let password = document.getElementById('loginPassword').value;
-
-                const loginCredentials = {
-                    email: email,
-                    password: password
-                };
-
-                fetch("http://localhost:3000/users", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(loginCredentials)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Login failed. Please check your credentials.');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    alert('Login successful!');
-                    document.getElementById('login').reset(); // Reset the form fields
-                    // Redirect to out.html after successful login
-                    window.location.href = 'out.html';
                 })
                 .catch(error => {
                     alert(error.message);
